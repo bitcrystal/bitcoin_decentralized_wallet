@@ -148,6 +148,7 @@ HEADERS += src/convert_functions.h \
 	src/base64.h \
 	src/random.h \
 	src/base_security.h \
+	src/base_security_neutral.h \
 	src/qt/bitcoingui.h \
     src/qt/transactiontablemodel.h \
     src/qt/addresstablemodel.h \
@@ -233,6 +234,7 @@ SOURCES += src/convert_functions.cpp \
 	src/base64.cpp \
 	src/random.cpp \
 	src/base_security.cpp \
+	src/base_security_neutral.cpp \
 	src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \

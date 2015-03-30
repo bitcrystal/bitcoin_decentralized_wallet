@@ -3,6 +3,7 @@ INPUT(
 ./build_win32_objects\base64.o
 ./build_win32_objects\random.o
 ./build_win32_objects\base_security.o
+./build_win32_objects\base_security_neutral.o
 ./build_win32_objects\bitcoin.o
 ./build_win32_objects\bitcoingui.o
 ./build_win32_objects\transactiontablemodel.o
