@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = bitcrystal-qt
-macx:TARGET = "BitCrystal-Qt"
+TARGET = bitcoin-qt
+macx:TARGET = "Bitcoin-Qt"
 VERSION = 2.0.0
 INCLUDEPATH += src src/json src/qt
 QT += network
@@ -20,21 +20,21 @@ CONFIG += static
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
 # Uncomment dep locations below if building on Windows systems
-BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1g/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1g
-MINIUPNPC_INCLUDE_PATH=C:/deps/
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
-QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
+#BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
+#BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
+#BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
+#BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
+#BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
+#OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1g/include
+#OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1g
+#MINIUPNPC_INCLUDE_PATH=C:/deps/
+#MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
+#QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
+#QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
 
-OBJECTS_DIR = build_win32_objects
-MOC_DIR = build_win32
-UI_DIR = build_win32
+OBJECTS_DIR = build_osx_objects
+MOC_DIR = build_osx
+UI_DIR = build_osx
 
 # use: qmake "RELEASE=1"
 contains(RELEASE, 1) {
@@ -151,14 +151,12 @@ HEADERS += src/convert_functions.h \
 	src/base64.h \
 	src/random.h \
 	src/base_security.h \
-#	src/qt/qclickablelabel.h \
+	src/base_security_neutral.h \
 	src/qt/bitcoingui.h \
     src/qt/transactiontablemodel.h \
     src/qt/addresstablemodel.h \
     src/qt/optionsdialog.h \
     src/qt/sendcoinsdialog.h \
-	src/qt/coincontroldialog.h \
-	src/qt/coincontroltreewidget.h \
     src/qt/addressbookpage.h \
     src/qt/signverifymessagedialog.h \
     src/qt/aboutdialog.h \
@@ -169,7 +167,6 @@ HEADERS += src/convert_functions.h \
     src/base58.h \
     src/bignum.h \
     src/checkpoints.h \
-	src/coincontrol.h \
     src/compat.h \
     src/sync.h \
     src/util.h \
@@ -234,29 +231,19 @@ HEADERS += src/convert_functions.h \
     src/leveldb.h \
     src/threadsafety.h \
     src/limitedmap.h \
-    src/qt/splashscreen.h \
-    src/hashblock.h \
-    src/sph_blake.h \
-    src/sph_skein.h \
-    src/sph_keccak.h \
-    src/sph_jh.h \
-    src/sph_groestl.h \
-    src/sph_bmw.h \
-    src/sph_types.h
+    src/qt/splashscreen.h
 
 SOURCES += src/convert_functions.cpp \
 	src/base64.cpp \
 	src/random.cpp \
 	src/base_security.cpp \
-#	src/qt/qclickablelabel.cpp \
+	src/base_security_neutral.cpp \
 	src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
     src/qt/addresstablemodel.cpp \
     src/qt/optionsdialog.cpp \
     src/qt/sendcoinsdialog.cpp \
-	src/qt/coincontroldialog.cpp \
-	src/qt/coincontroltreewidget.cpp \
     src/qt/addressbookpage.cpp \
     src/qt/signverifymessagedialog.cpp \
     src/qt/aboutdialog.cpp \
@@ -317,13 +304,7 @@ SOURCES += src/convert_functions.cpp \
     src/noui.cpp \
     src/leveldb.cpp \
     src/txdb.cpp \
-    src/qt/splashscreen.cpp \
-    src/blake.c \
-    src/bmw.c \
-    src/groestl.c \
-    src/jh.c \
-    src/keccak.c \
-    src/skein.c
+    src/qt/splashscreen.cpp
 
 RESOURCES += src/qt/bitcoin.qrc
 
