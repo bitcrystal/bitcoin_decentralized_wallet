@@ -2028,8 +2028,8 @@ Value createrawtransaction_multisig(const Array& params, bool fHelp)
 	obj.push_back(Pair("toaddress", receive_address));
 	obj.push_back(Pair("amount", amount));
 	obj.push_back(Pair("fee", fee));
-	obj.push_back(Pair("currency", "Bitcrystal"));
-	obj.push_back(Pair("currencyprefix", "BTCRY"));
+	obj.push_back(Pair("currency", "Bitcoin"));
+	obj.push_back(Pair("currencyprefix", "BTC"));
 	obj.push_back(Pair("addresses", my.addressesJSON));
 	obj.push_back(Pair("complete", false));
 	obj.push_back(Pair("issended", false));
