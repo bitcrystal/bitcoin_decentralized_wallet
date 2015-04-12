@@ -1836,7 +1836,6 @@ Value getbalancefromtxids_multisigex(const Array& params, bool fHelp)
 	bool allok=getbalancefromtxids(account, balance, minconfirmations, txids);
 	if(!allok||balance<=0)
 	{
-		return minconfirmations;
 		return 0;
 	}
 	return balance;
