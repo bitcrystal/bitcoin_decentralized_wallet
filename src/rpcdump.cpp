@@ -1705,6 +1705,7 @@ try
 	paramsR.push_back(obj2);
 	params.push_back(paramsR);
 	params.push_back(arr2);
+	return true;
 } catch (...) {
 	return false;
 }
@@ -1779,6 +1780,7 @@ bool buildtransaction_multisig(std::string & account_or_address, std::string & r
 	paramsR.push_back(obj2);
 	params.push_back(paramsR);
 	params.push_back(arr2);
+	return true;
 }
 
 Value getbalance_multisigex(const Array& params, bool fHelp)
